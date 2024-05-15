@@ -1,0 +1,9 @@
+
+# Old etc.
+*.old*
+*.orig
+/*.patch
+*.ref*
+
+# Nonpersistent stuff.
+TODO.md
