@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+
+#
+# 1) Store piped input into Windows clipboard, or
+# 2) Print Windows clipboard contents.
+#
+
+# Set strict mode.
+set -u -o pipefail
+
+# Return 0 if STDIN is a terminal, 1 otherwise.
+is_tty() {
+  test -t 0
+}
+
+retrieve() {
+  local CB
+  # OPTIMIZE: This has minor issues with Zsh yet. Need to debug and fix.
+  CB=$(powershell.exe Get-Clipboard | tr -d '\r')
+  if [ $? != 0 ]; then
+    echo "Error getting clipboard contents" >&2
+    return 1
+  fi
+
+  if [ -z "${CB}" ]; then
+    echo "The clipboard is empty" >&2
+    return 1
+  fi
+
+  echo "${CB}"
+}
+
+# Store into the clipboard.
+store() {
+  clip.exe
+}
+
+#--------------------------------------- Main
+
+if is_tty; then
+  retrieve
+else
+  store
+fi

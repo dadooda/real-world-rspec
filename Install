@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+# Set strict mode.
+set -u -o pipefail
+
+# WARNING! Cd to script path.
+cd "${0%/*}"
+
+echo
+echo "During this script, several remote repositories will be cloned,"
+echo "fetching around 2 GB worth of data. Might take some time,"
+echo "depending on your Internet connection."
+echo
+
+DFL="Y"; read -ep "Proceed? [$DFL]: "
+REPLY=${REPLY:-$DFL}
+[ "${REPLY,,}" = "y" ] || exit 0
+
+(set -x; git submodule update --init --depth 100 --jobs ${JOBS:-4})

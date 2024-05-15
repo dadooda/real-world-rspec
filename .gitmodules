@@ -1,0 +1,48 @@
+[submodule "apps/gitlabhq"]
+	path = apps/gitlabhq
+	url = git@github.com:gitlabhq/gitlabhq.git
+	branch = master
+[submodule "apps/discourse"]
+	path = apps/discourse
+	url = git@github.com:discourse/discourse.git
+	branch = main
+[submodule "apps/openproject"]
+	path = apps/openproject
+	url = git@github.com:opf/openproject.git
+	branch = dev
+[submodule "apps/canvas-lms"]
+	path = apps/canvas-lms
+	url = git@github.com:instructure/canvas-lms.git
+	branch = master
+[submodule "apps/dev_to"]
+	path = apps/dev_to
+	url = git@github.com:thepracticaldev/dev.to.git
+	branch = main
+[submodule "apps/identity-idp"]
+	path = apps/identity-idp
+	url = git@github.com:18F/identity-idp.git
+	branch = main
+[submodule "apps/manageiq"]
+	path = apps/manageiq
+	url = git@github.com:ManageIQ/manageiq.git
+	branch = master
+[submodule "apps/zammad"]
+	path = apps/zammad
+	url = git@github.com:zammad/zammad.git
+	branch = develop
+[submodule "apps/mastodon"]
+	path = apps/mastodon
+	url = git@github.com:mastodon/mastodon.git
+	branch = main
+[submodule "libs/factory_bot"]
+	path = libs/factory_bot
+	url = git@github.com:thoughtbot/factory_bot.git
+	branch = main
+[submodule "libs/shoulda-matchers"]
+	path = libs/shoulda-matchers
+	url = git@github.com:thoughtbot/shoulda-matchers.git
+	branch = main
+[submodule "libs/rspec_magic"]
+	path = libs/rspec_magic
+	url = git@github.com:dadooda/rspec_magic.git
+	branch = master

@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# Set strict mode.
+set -u -o pipefail
+
+# WARNING! Cd to script path.
+cd "${0%/*}"
+
+DFL="Y"; read -ep "Update checked out submodules? [$DFL]: "
+REPLY=${REPLY:-$DFL}
+[ "${REPLY,,}" = "y" ] || exit 0
+
+(set -x; git submodule update --remote --jobs ${JOBS:-4})

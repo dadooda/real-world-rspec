@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+# Set strict mode.
+set -u -o pipefail
+
+# WARNING! Cd to script path.
+cd "${0%/*}"
+
+echo
+echo "During this scripts, dead symlinks of the checked out submodules"
+echo "will be deleted. This will effectively modify them, causing additional"
+echo "Git queries later, when you update."
+echo
+echo "If you don't plan to contribute to this project, it's reasonable to answer 'Y'."
+echo
+
+DFL="N"; read -ep "Wipe dead symlinks? [$DFL]: "
+REPLY=${REPLY:-$DFL}
+[ "${REPLY,,}" = "y" ] || exit 0
+
+for DIR in apps libs; do
+  FILES=$(find "${DIR}" -xtype l)
+  if [ -n "${FILES}" ]; then
+    (set -x; rm "${FILES}" )
+  fi
+done
