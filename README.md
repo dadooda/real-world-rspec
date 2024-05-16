@@ -24,7 +24,7 @@
 
 This is a collection of active, open source Rails apps and Ruby libraries with
 extensive RSpec coverage.
-Developers can use these sources to study and look up certain code and test patterns.
+Developers can use these sources to study and look up code and test examples.
 
 ## Setup
 
