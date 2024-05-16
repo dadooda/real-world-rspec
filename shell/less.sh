@@ -3,7 +3,7 @@
 # Pagination and code browsing enhancements.
 #
 
-[ -z "${BASH_VERSION}" ] && { echo "Only Bash is supported" >&2; return 1 }
+[ -z "${BASH_VERSION}" ] && { echo "Only Bash is supported" >&2; return 1; }
 
 # Paginate `/path/to/file[:line]` directly from Windows clipboard (under WSL).
 c() {
