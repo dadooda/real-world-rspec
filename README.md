@@ -74,7 +74,7 @@ rg --color=always -Ln validates.+presence.+true | less -S
 ```
 
 For more options and search scenarios, have a look at this nice
-[Ripgrep overview](https://mariusschulz.com/blog/fast-searching-with-ripgrep) by Marius Shulz.
+[Ripgrep overview](https://mariusschulz.com/blog/fast-searching-with-ripgrep) by Marius Schulz.
 It'll give you a basic idea of what this brilliant tool is capable of.
 
 ### With Grep
